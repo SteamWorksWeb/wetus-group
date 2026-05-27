@@ -17,57 +17,126 @@ const GOLD = "#eab308";   // gold accent (CTA buttons)
 /* ── Hero ── */
 function Hero() {
   return (
-    <section id="hero" className="relative w-full" style={{ minHeight: "600px" }}>
+    <section id="hero" className="relative w-full" style={{ minHeight: "680px" }}>
+      {/* Background: coastal house photo matching reference image */}
       <Image
-        src="/images/Hero_construction_site_image_fdf65ec5.webp"
-        alt="Coastal construction site in Pensacola Florida"
+        src="/images/luxury_coastal_beach_51334a26.webp"
+        alt="Luxury coastal home construction in Pensacola Florida"
         fill
         priority
-        style={{ objectFit: "cover", objectPosition: "center" }}
+        style={{ objectFit: "cover", objectPosition: "center 30%" }}
       />
-      <div className="absolute inset-0" style={{ backgroundColor: "rgba(27,37,75,0.65)" }} />
-      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 py-28" style={{ minHeight: "600px" }}>
-        <p style={{ color: GOLD, fontFamily: "var(--font-sans)", fontSize: "0.8rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: "1rem" }}>
-          FL Licensed · CRC1334830 · CBC1268785
-        </p>
-        <h1 className="text-balance font-bold text-white mb-5" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem,5vw,3.5rem)", maxWidth: "840px", lineHeight: 1.12 }}>
-          Pensacola General Contractor – Licensed Residential &amp; Commercial Builders
+      {/* Dark overlay for text legibility — matches reference opacity */}
+      <div className="absolute inset-0" style={{ backgroundColor: "rgba(10,15,30,0.52)" }} />
+
+      {/* Content container — centered, generous vertical padding */}
+      <div
+        className="relative z-10 flex flex-col items-center justify-center text-center px-6"
+        style={{ minHeight: "680px", paddingTop: "7rem", paddingBottom: "7rem" }}
+      >
+        {/* H1 — very large bold white headline, matching reference weight/size */}
+        <h1
+          className="font-bold text-white"
+          style={{
+            fontSize: "clamp(2.4rem, 6vw, 4.2rem)",
+            lineHeight: 1.08,
+            maxWidth: "900px",
+            marginBottom: "1.5rem",
+            letterSpacing: "-0.01em",
+            color: "#ffffff",
+          }}
+        >
+          Pensacola General Contractor –{" "}
+          Licensed Residential &amp;{" "}
+          Commercial Builders
         </h1>
-        <p className="text-white mb-8" style={{ fontSize: "clamp(1rem,2vw,1.15rem)", maxWidth: "680px", opacity: 0.90 }}>
-          WETUS Group provides residential construction, commercial build-outs, remodeling, and consulting services with transparent budgets, clear communication, and proven project execution.
+
+        {/* P1 — service description, white, medium weight */}
+        <p
+          style={{
+            color: "#ffffff",
+            fontSize: "clamp(1rem, 2vw, 1.15rem)",
+            maxWidth: "660px",
+            lineHeight: 1.6,
+            marginBottom: "1.25rem",
+            opacity: 1,
+          }}
+        >
+          Licensed Florida general contractor providing residential construction,
+          commercial build-outs, and consulting services in Pensacola, Gulf
+          Breeze, Pace, Milton, and Northwest Florida.
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          <Link href="/contact" id="hero-cta-estimate"
-            className="flex items-center gap-2 px-8 py-3.5 rounded-full font-semibold text-white transition-all duration-200"
+
+        {/* P2 — secondary description, slightly smaller, white */}
+        <p
+          style={{
+            color: "#ffffff",
+            fontSize: "clamp(0.875rem, 1.5vw, 0.975rem)",
+            maxWidth: "600px",
+            lineHeight: 1.65,
+            marginBottom: "2.5rem",
+            opacity: 0.92,
+          }}
+        >
+          WETUS Group provides residential construction, commercial build-outs,
+          remodeling, and consulting services with transparent budgets, clear
+          communication, and proven project execution.
+        </p>
+
+        {/* CTA Button Row */}
+        <div className="flex flex-wrap items-center justify-center gap-5">
+
+          {/* Button 1 — solid navy, white text + arrow */}
+          <Link
+            href="/contact"
+            id="hero-cta-estimate"
+            className="flex items-center gap-3 font-semibold transition-all duration-200"
             style={{
-              backgroundColor: "rgba(27,37,75,0.7)",
-              backdropFilter: "blur(10px)",
-              WebkitBackdropFilter: "blur(10px)",
-              border: "1px solid rgba(255,255,255,0.2)",
+              backgroundColor: "#1b254b",
               color: "#ffffff",
               fontSize: "0.95rem",
-            }}>
+              padding: "0.875rem 2rem",
+              borderRadius: "6px",
+              border: "1px solid rgba(255,255,255,0.1)",
+              letterSpacing: "0.01em",
+            }}
+          >
             Request a Free Estimate
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
           </Link>
-          <a href="tel:+18504668909" id="hero-cta-call"
-            className="flex items-center gap-2 px-8 py-3.5 rounded-full font-semibold text-white transition-all duration-200"
+
+          {/* Button 2 — frosted glass dark gray, phone icon + white text */}
+          <a
+            href="tel:+18504668909"
+            id="hero-cta-call"
+            className="flex items-center gap-3 font-semibold transition-all duration-200"
             style={{
-              backgroundColor: "rgba(27,37,75,0.7)",
+              backgroundColor: "rgba(30,30,30,0.4)",
               backdropFilter: "blur(10px)",
               WebkitBackdropFilter: "blur(10px)",
-              border: "1px solid rgba(255,255,255,0.2)",
               color: "#ffffff",
               fontSize: "0.95rem",
-            }}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              padding: "0.875rem 2rem",
+              borderRadius: "6px",
+              border: "1px solid rgba(255,255,255,0.18)",
+              letterSpacing: "0.01em",
+            }}
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
             Call (850) 466-8909
           </a>
+
         </div>
       </div>
     </section>
   );
 }
+
 
 /* ── Serving Section ── */
 function ServingSection() {
