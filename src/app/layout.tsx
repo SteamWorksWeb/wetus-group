@@ -1,34 +1,36 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/app/components/Header";
 import { Footer } from "@/app/components/Footer";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  display: "swap",
-});
+/*
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │  FONT AUDIT — wetusgroup.com (live DOM, 2026-05-27)                    │
+  │                                                                         │
+  │  Computed :root { --font-sans } =                                       │
+  │    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,              │
+  │    "Helvetica Neue", Arial, sans-serif                                  │
+  │                                                                         │
+  │  No <link> to Google Fonts or Adobe Fonts found in <head>.             │
+  │  No @font-face rules in any stylesheet.                                 │
+  │  → The live site ships 100% system fonts. No external fonts to import. │
+  └─────────────────────────────────────────────────────────────────────────┘
+*/
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-});
-
+/* ── SEO Metadata (Audit-Exact) ───────────────────────────────── */
 export const metadata: Metadata = {
   title: {
-    default: "WETUS Group | Licensed FL Contractor & Consulting Firm",
+    default:
+      "Pensacola General Contractor | Licensed Residential & Commercial Builder",
     template: "%s | WETUS Group",
   },
   description:
-    "WETUS Group: FL licensed contractor CRC1334830 & CBC1268785. Residential remodeling, new construction, storm hardening, and owner's rep consulting in Northwest Florida.",
+    "WETUS Group provides residential construction, commercial build-outs, remodeling, and consulting services with transparent budgets, clear communication, and proven project execution. FL Licensed CRC1334830 & CBC1268785.",
   keywords: [
     "Pensacola general contractor",
     "licensed contractor Florida",
     "residential construction Pensacola",
+    "commercial construction Pensacola",
     "storm hardening",
     "construction consulting",
     "owner representative",
@@ -43,9 +45,10 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.wetusgroup.com",
     siteName: "WETUS Group",
-    title: "WETUS Group | Licensed FL Contractor & Consulting Firm",
+    title:
+      "Pensacola General Contractor | Licensed Residential & Commercial Builder",
     description:
-      "WETUS Group: FL licensed contractor CRC1334830 & CBC1268785. Residential remodeling, new construction, storm hardening, and owner's rep consulting in Northwest Florida.",
+      "WETUS Group provides residential construction, commercial build-outs, remodeling, and consulting services. FL Licensed CRC1334830 & CBC1268785.",
   },
   robots: { index: true, follow: true },
   metadataBase: new URL("https://www.wetusgroup.com"),
@@ -55,8 +58,8 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
-      <body style={{ fontFamily: "var(--font-sans)" }}>
+    <html lang="en">
+      <body>
         <Header />
         {children}
         <Footer />

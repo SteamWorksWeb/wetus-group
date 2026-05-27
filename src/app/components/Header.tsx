@@ -50,15 +50,15 @@ export function Header() {
           <Link href="/" id="nav-logo" aria-label="WETUS Group Home" className="flex items-center gap-2.5">
             {/* House icon */}
             <svg width="40" height="46" viewBox="0 0 40 46" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 2L2 14v28h12V28h12v14h12V14L20 2z" fill="#162032" opacity="0.12"/>
-              <path d="M20 2L2 14v28h12V28h12v14h12V14L20 2z" fill="none" stroke="#162032" strokeWidth="2" strokeLinejoin="round"/>
-              <rect x="16" y="28" width="8" height="14" fill="#162032" opacity="0.4"/>
-              <path d="M12 14h16v10H12z" fill="#162032" opacity="0.08"/>
+              <path d="M20 2L2 14v28h12V28h12v14h12V14L20 2z" fill="#0d1b42" opacity="0.12"/>
+              <path d="M20 2L2 14v28h12V28h12v14h12V14L20 2z" fill="none" stroke="#0d1b42" strokeWidth="2" strokeLinejoin="round"/>
+              <rect x="16" y="28" width="8" height="14" fill="#0d1b42" opacity="0.4"/>
+              <path d="M12 14h16v10H12z" fill="#0d1b42" opacity="0.08"/>
             </svg>
             {/* Wordmark */}
             <div className="flex flex-col leading-none">
-              <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "1rem", color: "#162032", letterSpacing: "0.04em" }}>WETUS</span>
-              <span style={{ fontFamily: "var(--font-sans)", fontWeight: 400, fontSize: "0.6rem", color: "#162032", letterSpacing: "0.18em", textTransform: "uppercase" }}>GROUP</span>
+              <span style={{ fontWeight: 700, fontSize: "1rem", color: "#0d1b42", letterSpacing: "0.04em" }}>WETUS</span>
+              <span style={{ fontWeight: 400, fontSize: "0.6rem", color: "#0d1b42", letterSpacing: "0.18em", textTransform: "uppercase" }}>GROUP</span>
             </div>
           </Link>
 
@@ -70,7 +70,7 @@ export function Header() {
                   <button
                     id="nav-services"
                     className="flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors duration-150"
-                    style={{ color: "#162032", fontFamily: "var(--font-sans)" }}
+                    style={{ color: "#0d1b42" }}
                     onMouseEnter={() => setServicesOpen(true)}
                     onMouseLeave={() => setServicesOpen(false)}
                   >
@@ -90,7 +90,7 @@ export function Header() {
                           key={link.href}
                           href={link.href}
                           className="block px-4 py-2.5 text-sm transition-colors duration-150"
-                          style={{ color: "#162032", fontFamily: "var(--font-sans)" }}
+                          style={{ color: "#0d1b42" }}
                           onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#EEF0F5"; }}
                           onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent"; }}
                         >
@@ -106,8 +106,8 @@ export function Header() {
                   href={item.href}
                   id={`nav-${item.label.toLowerCase()}`}
                   className="px-3 py-2 text-sm font-medium transition-colors duration-150"
-                  style={{ color: "#162032", fontFamily: "var(--font-sans)" }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#162032"; (e.currentTarget as HTMLAnchorElement).style.opacity = "0.7"; }}
+                  style={{ color: "#0d1b42" }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = "0.65"; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = "1"; }}
                 >
                   {item.label}
@@ -122,7 +122,7 @@ export function Header() {
               href="tel:+18504668909"
               id="nav-call"
               className="hidden md:flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full border transition-colors duration-150"
-              style={{ color: "#162032", borderColor: "#D1D5DB", fontFamily: "var(--font-sans)" }}
+              style={{ color: "#0d1b42", borderColor: "#e0e0e0" }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#EEF0F5"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent"; }}
             >
@@ -133,9 +133,9 @@ export function Header() {
               href="/contact"
               id="nav-estimate"
               className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-full transition-all duration-200"
-              style={{ backgroundColor: "#162032", color: "#FFFFFF", fontFamily: "var(--font-sans)" }}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#0F1825"; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#162032"; }}
+              style={{ backgroundColor: "#0d1b42", color: "#FFFFFF" }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#060e25"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#0d1b42"; }}
             >
               Request Estimate
             </Link>
@@ -148,7 +148,7 @@ export function Header() {
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen(true)}
             >
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#162032" strokeWidth="2" strokeLinecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0d1b42" strokeWidth="2" strokeLinecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
             </button>
           </div>
         </div>
@@ -156,7 +156,7 @@ export function Header() {
         {/* ---- Info Bar ---- */}
         <div
           className="w-full text-center text-xs py-2 px-4"
-          style={{ backgroundColor: "#F1F3F8", color: "#6B7280", fontFamily: "var(--font-sans)", borderTop: "1px solid #E5E7EB" }}
+          style={{ backgroundColor: "#F1F3F8", color: "#475569", fontFamily: "var(--font-sans)", borderTop: "1px solid #E2E8F0" }}
         >
           Florida Licenses: CRC1334830 &amp; CBC1268785 &bull; Locally Owned &bull; Serving Escambia &amp; Santa Rosa Counties &bull; Consulting Services Available Nationwide
         </div>
@@ -168,9 +168,9 @@ export function Header() {
           <div className="absolute inset-0 bg-black/50" onClick={() => setMobileOpen(false)} />
           <div className="absolute right-0 top-0 h-full w-80 flex flex-col" style={{ backgroundColor: "#FFFFFF" }}>
             <div className="flex items-center justify-between px-6 py-4" style={{ borderBottom: "1px solid #E5E7EB" }}>
-              <span style={{ fontFamily: "var(--font-display)", fontWeight: 700, color: "#162032" }}>WETUS Group</span>
+              <span style={{ fontWeight: 700, color: "#0d1b42" }}>WETUS Group</span>
               <button onClick={() => setMobileOpen(false)} aria-label="Close menu">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#162032" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0d1b42" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
               </button>
             </div>
             <nav className="flex-1 overflow-y-auto px-4 py-6 space-y-1">
@@ -179,7 +179,7 @@ export function Header() {
                   key={item.label}
                   href={item.href}
                   className="block px-3 py-3 text-sm font-medium rounded-lg"
-                  style={{ color: "#162032" }}
+                  style={{ color: "#0d1b42" }}
                   onClick={() => setMobileOpen(false)}
                 >
                   {item.label}
@@ -187,10 +187,10 @@ export function Header() {
               ))}
             </nav>
             <div className="px-6 py-4 space-y-3" style={{ borderTop: "1px solid #E5E7EB" }}>
-              <a href="tel:+18504668909" className="flex items-center justify-center gap-2 w-full py-3 rounded-full border text-sm font-medium" style={{ color: "#162032", borderColor: "#D1D5DB" }}>
+              <a href="tel:+18504668909" className="flex items-center justify-center gap-2 w-full py-3 rounded-full border text-sm font-medium" style={{ color: "#0d1b42", borderColor: "#e0e0e0" }}>
                 Call (850) 466-8909
               </a>
-              <Link href="/contact" className="block text-center w-full py-3 rounded-full text-sm font-semibold text-white" style={{ backgroundColor: "#162032" }} onClick={() => setMobileOpen(false)}>
+              <Link href="/contact" className="block text-center w-full py-3 rounded-full text-sm font-semibold text-white" style={{ backgroundColor: "#0d1b42" }} onClick={() => setMobileOpen(false)}>
                 Request Estimate
               </Link>
             </div>

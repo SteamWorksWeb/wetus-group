@@ -51,7 +51,7 @@ export function Footer() {
                 WETUS GROUP
               </span>
             </div>
-            <p style={{ color: "#9CA3AF", fontSize: "0.9rem", lineHeight: 1.6, fontFamily: "var(--font-sans)", marginBottom: "1.25rem" }}>
+            <p style={{ color: "#9CA3AF", fontSize: "0.9rem", lineHeight: 1.6, marginBottom: "1.25rem" }}>
               Elevating the Standard — One Build at a Time.
             </p>
             {/* Social icons */}
@@ -83,7 +83,7 @@ export function Footer() {
 
           {/* Column 2 — Services */}
           <div>
-            <h3 style={{ color: "#FFFFFF", fontFamily: "var(--font-sans)", fontSize: "0.875rem", fontWeight: 600, letterSpacing: "0.02em", marginBottom: "1rem" }}>
+            <h3 style={{ color: "#FFFFFF", fontSize: "0.875rem", fontWeight: 600, letterSpacing: "0.02em", marginBottom: "1rem" }}>
               Services
             </h3>
             <ul className="space-y-2.5">
@@ -91,7 +91,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    style={{ color: "#9CA3AF", fontSize: "0.875rem", fontFamily: "var(--font-sans)", transition: "color 150ms" }}
+                    style={{ color: "#9CA3AF", fontSize: "0.875rem", transition: "color 150ms" }}
                     onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#FFFFFF"; }}
                     onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#9CA3AF"; }}
                   >
@@ -104,7 +104,7 @@ export function Footer() {
 
           {/* Column 3 — Company */}
           <div>
-            <h3 style={{ color: "#FFFFFF", fontFamily: "var(--font-sans)", fontSize: "0.875rem", fontWeight: 600, letterSpacing: "0.02em", marginBottom: "1rem" }}>
+            <h3 style={{ color: "#FFFFFF", fontSize: "0.875rem", fontWeight: 600, letterSpacing: "0.02em", marginBottom: "1rem" }}>
               Company
             </h3>
             <ul className="space-y-2.5">
@@ -112,7 +112,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    style={{ color: "#9CA3AF", fontSize: "0.875rem", fontFamily: "var(--font-sans)", transition: "color 150ms" }}
+                    style={{ color: "#9CA3AF", fontSize: "0.875rem", transition: "color 150ms" }}
                     onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#FFFFFF"; }}
                     onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#9CA3AF"; }}
                   >
@@ -125,21 +125,21 @@ export function Footer() {
 
           {/* Column 4 — Contact */}
           <div>
-            <h3 style={{ color: "#FFFFFF", fontFamily: "var(--font-sans)", fontSize: "0.875rem", fontWeight: 600, letterSpacing: "0.02em", marginBottom: "1rem" }}>
+            <h3 style={{ color: "#FFFFFF", fontSize: "0.875rem", fontWeight: 600, letterSpacing: "0.02em", marginBottom: "1rem" }}>
               Contact
             </h3>
             <ul className="space-y-3">
               {/* Address */}
               <li className="flex items-start gap-2.5">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 flex-shrink-0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span style={{ color: "#9CA3AF", fontSize: "0.875rem", fontFamily: "var(--font-sans)", lineHeight: 1.5 }}>
+                <span style={{ color: "#9CA3AF", fontSize: "0.875rem", lineHeight: 1.5 }}>
                   6901A N. 9th Ave, #546,<br />Pensacola, FL 32504
                 </span>
               </li>
               {/* Office phone */}
               <li className="flex items-center gap-2.5">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="#9CA3AF" className="flex-shrink-0"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                <a href="tel:+18504668909" style={{ color: "#9CA3AF", fontSize: "0.875rem", fontFamily: "var(--font-sans)" }}
+                <a href="tel:+18504668909" style={{ color: "#9CA3AF", fontSize: "0.875rem" }}
                   onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#FFFFFF"; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#9CA3AF"; }}>
                   Office: (850) 466-8909
@@ -148,7 +148,7 @@ export function Footer() {
               {/* Toll-free */}
               <li className="flex items-center gap-2.5">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="#9CA3AF" className="flex-shrink-0"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                <a href="tel:+18339993887" style={{ color: "#9CA3AF", fontSize: "0.875rem", fontFamily: "var(--font-sans)" }}
+                <a href="tel:+18339993887" style={{ color: "#9CA3AF", fontSize: "0.875rem" }}
                   onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#FFFFFF"; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#9CA3AF"; }}>
                   Toll-Free: (833) 999-3887
@@ -157,7 +157,7 @@ export function Footer() {
               {/* Email */}
               <li className="flex items-center gap-2.5">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                <a href="mailto:info@wetusgroup.com" style={{ color: "#9CA3AF", fontSize: "0.875rem", fontFamily: "var(--font-sans)" }}
+                <a href="mailto:info@wetusgroup.com" style={{ color: "#9CA3AF", fontSize: "0.875rem" }}
                   onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#FFFFFF"; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#9CA3AF"; }}>
                   info@wetusgroup.com
@@ -167,7 +167,7 @@ export function Footer() {
 
             {/* License badge */}
             <div className="mt-5 pt-4" style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}>
-              <p style={{ color: "#C8960C", fontSize: "0.8rem", fontWeight: 600, fontFamily: "var(--font-sans)" }}>
+              <p style={{ color: "#eab308", fontSize: "0.8rem", fontWeight: 600 }}>
                 Florida Licenses: CRC1334830 &amp; CBC1268785
               </p>
             </div>
@@ -178,7 +178,7 @@ export function Footer() {
       {/* Bottom bar */}
       <div style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}>
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p style={{ color: "#6B7280", fontSize: "0.8rem", fontFamily: "var(--font-sans)" }}>
+          <p style={{ color: "#6B7280", fontSize: "0.8rem" }}>
             © 2026 WETUS Consulting Group, LLC. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
@@ -190,7 +190,7 @@ export function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                style={{ color: "#6B7280", fontSize: "0.8rem", fontFamily: "var(--font-sans)" }}
+                style={{ color: "#6B7280", fontSize: "0.8rem" }}
                 onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#FFFFFF"; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#6B7280"; }}
               >

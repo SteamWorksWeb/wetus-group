@@ -1,34 +1,92 @@
 @import "tailwindcss";
 
 /* ================================================================
-   WETUS Group — Design System
-   Source: live DOM inspection of wetusgroup.com
-   Body bg: #EEF0F5 (light blue-gray)
-   Nav bg:  #FFFFFF (white, with shadow)
-   Navy:    #162032 (primary brand dark)
-   Gold:    #C8960C (accent, license text)
-   Footer:  #1A2744 (deep navy)
+   WETUS Group — Design System v3
+   Source: Live DOM Audit of wetusgroup.com — 2026-05-27
+
+   ┌─────────────────────────────────────────────────────────────┐
+   │  FONT AUDIT RESULT                                          │
+   │  Tag      computed font-family                              │
+   │  ─────    ─────────────────────────────────────────────── │
+   │  h1/h2    -apple-system, BlinkMacSystemFont, "Segoe UI",   │
+   │           Roboto, "Helvetica Neue", Arial, sans-serif       │
+   │  p        (same — inherits from body)                       │
+   │  body     (same)                                            │
+   │                                                             │
+   │  No Google Fonts. No Adobe Fonts. Pure system stack.        │
+   └─────────────────────────────────────────────────────────────┘
+
+   ┌─────────────────────────────────────────────────────────────┐
+   │  COLOR AUDIT RESULT (from :root in live CSS)                │
+   │  Token              HSL                  Hex equiv           │
+   │  ───────────────    ──────────────────   ────────────       │
+   │  --foreground       222 70% 15%          #0d1b42  (headings)│
+   │  --primary          237 49% 26%          #222462  (brand)   │
+   │  --muted-foreground 0 2% 45%             #757070  (body p)  │
+   │  --background       0 0% 100%            #ffffff             │
+   │  --border           0 0% 88%             #e0e0e0             │
+   │  Gold accent        —                    #eab308  (CTA)     │
+   │  Footer bg          —                    #1A2744             │
+   └─────────────────────────────────────────────────────────────┘
+
+   Tailwind v4 uses @theme inline — no tailwind.config.ts required.
 ================================================================ */
 
 @theme inline {
-  /* Brand Colors */
-  --color-wetus-navy:        #162032;
-  --color-wetus-navy-deep:   #0F1825;
-  --color-wetus-navy-footer: #1A2744;
-  --color-wetus-gold:        #C8960C;
+  /* ── Typography — EXACT system stack from live site ────────── */
+  /* Live site --font-sans = -apple-system, BlinkMacSystemFont, "Segoe UI",
+     Roboto, "Helvetica Neue", Arial, sans-serif                          */
+  --font-sans:    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* ── Primary Brand Palette — Exact HSL→Hex from live :root ─── */
+  /* --foreground: 222 70% 15%  → #0d1b42 (headings, dark text) */
+  --color-primary:           #0d1b42;
+  --color-primary-dark:      #060e25;
+  --color-primary-light:     #1a2f6e;
+
+  /* --primary: 237 49% 26%  → #222462 (brand CTA blue) */
+  --color-brand:             #222462;
+  --color-brand-dark:        #191a4a;
+
+  /* --muted-foreground: 0 2% 45%  → #757070 (body paragraph text) */
+  --color-body:              #757070;
+  --color-secondary:         #757070;
+  --color-secondary-light:   #9e9a9a;
+
+  /* Accent / Gold */
+  --color-accent:            #eab308;
+  --color-accent-dark:       #ca8a04;
+  --color-accent-light:      #fde047;
+
+  /* ── Surface / Layout tokens ────────────────────────────────── */
+  /* --border: 0 0% 88%  → #e0e0e0 */
+  --color-border:            #e0e0e0;
+  --color-wetus-border:      #e0e0e0;
+
+  /* Background system */
   --color-wetus-body-bg:     #EEF0F5;
   --color-wetus-section-bg:  #E8EAF0;
   --color-wetus-white:       #FFFFFF;
-  --color-wetus-text:        #162032;
-  --color-wetus-text-muted:  #6B7280;
-  --color-wetus-text-light:  #9CA3AF;
-  --color-wetus-border:      #E5E7EB;
   --color-wetus-card-bg:     #FFFFFF;
   --color-wetus-infobar-bg:  #F1F3F8;
+  --color-wetus-navy-footer: #1A2744;
 
-  /* Typography */
-  --font-display: var(--font-playfair), Georgia, "Times New Roman", serif;
-  --font-sans:    var(--font-inter), system-ui, -apple-system, sans-serif;
+  /* ── Semantic text aliases for Tailwind ────────────────────── */
+  /* Use: text-primary (headings), text-body (paragraphs), text-brand (CTA) */
+  --color-text-primary:      #0d1b42;  /* hsl(222 70% 15%) */
+  --color-text-body:         #757070;  /* hsl(0 2% 45%)    */
+  --color-text-brand:        #222462;  /* hsl(237 49% 26%) */
+  --color-text-muted:        #9e9a9a;
+  --color-text-light:        #cbd5e1;
+
+  /* Legacy aliases — backward compat with existing components */
+  --color-wetus-navy:        #0d1b42;
+  --color-wetus-navy-deep:   #060e25;
+  --color-wetus-gold:        #eab308;
+  --color-wetus-text:        #0d1b42;
+  --color-wetus-text-muted:  #757070;
+  --color-wetus-text-light:  #9e9a9a;
 }
 
 /* ================================================================
@@ -46,22 +104,25 @@ html {
 
 body {
   background-color: #FFFFFF;
-  color: #162032;
-  font-family: var(--font-sans);
+  /* Exact body text color from live computed --foreground on body */
+  color: #0d1b42;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
 }
 
+/* Headings: same system font, --foreground color (hsl 222 70% 15% = #0d1b42) */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
-  color: #162032;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #0d1b42;
   line-height: 1.2;
   margin: 0;
 }
 
-p { margin: 0; }
-a { text-decoration: none; }
+/* Body paragraphs: --muted-foreground (hsl 0 2% 45% = #757070) */
+p  { margin: 0; color: #757070; }
+a  { text-decoration: none; }
 ul, ol { margin: 0; padding: 0; list-style: none; }
 img { display: block; max-width: 100%; }
 
