@@ -1,26 +1,90 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ============================================================
+   WETUS GROUP — Design System Tokens
+   Brand: Licensed FL Contractor & Consulting Firm
+   Primary palette: Deep navy, warm gold, clean white/stone
+   ============================================================ */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* --- Brand Colors --- */
+  --color-wetus-navy:        #0D1B2A; /* Primary dark background, header bg */
+  --color-wetus-navy-mid:    #162032; /* Slightly lighter navy for card/section backgrounds */
+  --color-wetus-navy-light:  #1E2D3D; /* Hover/active nav state */
+  --color-wetus-gold:        #C8960C; /* Primary accent / CTA buttons */
+  --color-wetus-gold-light:  #E2AF1A; /* Gold hover state */
+  --color-wetus-gold-muted:  #9A7209; /* Darker gold for text on light bg */
+  --color-wetus-cream:       #F5F0E8; /* Off-white section backgrounds */
+  --color-wetus-stone:       #E8E0D0; /* Warm stone / border / divider */
+  --color-wetus-white:       #FFFFFF;
+  --color-wetus-text:        #1A1A1A; /* Primary body text */
+  --color-wetus-text-muted:  #6B6560; /* Secondary / caption text */
+  --color-wetus-text-light:  #9C9490; /* Tertiary / placeholder text */
+  --color-wetus-overlay:     rgba(13, 27, 42, 0.72); /* Hero image dark overlay */
+
+  /* --- Typography --- */
+  --font-display: var(--font-playfair), Georgia, serif;
+  --font-sans:    var(--font-inter), system-ui, -apple-system, sans-serif;
+
+  /* --- Spacing / Radius --- */
+  --radius-card:  0.5rem;
+  --radius-btn:   0.375rem;
+
+  /* --- Transitions --- */
+  --transition-base: 200ms ease;
+  --transition-slow: 350ms ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ============================================================
+   Base Reset & Defaults
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-wetus-white);
+  color: var(--color-wetus-text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   Typography Scale
+   ============================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  line-height: 1.2;
+  color: var(--color-wetus-navy);
+  font-weight: 700;
+}
+
+/* ============================================================
+   Utility Classes (non-Tailwind overrides)
+   ============================================================ */
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Smooth scrollbar for webkit */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-wetus-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-wetus-gold);
+  border-radius: 3px;
 }
