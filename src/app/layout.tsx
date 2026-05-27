@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/app/components/Header";
+import { Footer } from "@/app/components/Footer";
 
-/* ---------------------------------------------------------------
-   Typography — matching Wetus Group's professional serif + sans
-   Playfair Display → headings / hero titles (display font)
-   Inter           → body copy / navigation / UI elements
---------------------------------------------------------------- */
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
@@ -21,9 +18,6 @@ const inter = Inter({
   display: "swap",
 });
 
-/* ---------------------------------------------------------------
-   Metadata — pulled directly from wetusgroup.com
---------------------------------------------------------------- */
 export const metadata: Metadata = {
   title: {
     default: "WETUS Group | Licensed FL Contractor & Consulting Firm",
@@ -32,17 +26,17 @@ export const metadata: Metadata = {
   description:
     "WETUS Group: FL licensed contractor CRC1334830 & CBC1268785. Residential remodeling, new construction, storm hardening, and owner's rep consulting in Northwest Florida.",
   keywords: [
-    "general contractor Pensacola",
+    "Pensacola general contractor",
     "licensed contractor Florida",
-    "residential remodeling",
-    "new construction Northwest Florida",
+    "residential construction Pensacola",
     "storm hardening",
-    "owner's representative",
-    "beach home construction",
-    "custom homes Pensacola",
+    "construction consulting",
+    "owner representative",
     "WETUS Group",
     "CRC1334830",
     "CBC1268785",
+    "Gulf Breeze contractor",
+    "Northwest Florida builder",
   ],
   openGraph: {
     type: "website",
@@ -53,28 +47,19 @@ export const metadata: Metadata = {
     description:
       "WETUS Group: FL licensed contractor CRC1334830 & CBC1268785. Residential remodeling, new construction, storm hardening, and owner's rep consulting in Northwest Florida.",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "WETUS Group | Licensed FL Contractor & Consulting Firm",
-    description:
-      "FL licensed contractor serving Pensacola, Gulf Breeze, Navarre & Northwest Florida.",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
   metadataBase: new URL("https://www.wetusgroup.com"),
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
-      <body className="min-h-screen flex flex-col antialiased">
+      <body style={{ fontFamily: "var(--font-sans)" }}>
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
